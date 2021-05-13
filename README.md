@@ -17,7 +17,7 @@ Assumes a non-zero element order, so the first element is `1` and the app should
 - Runs on .Net 5.0
 - The console app uses the `IHostBuilder` to construct the app dependencies through configuration and dependency injection
 - Uses one of two algorithms to calculate the fibonacci values:
-  - The algorithm is chosen and injected at runtime based on the `appsettings.json` value of `Algorithm` property value
+  - The algorithm is chosen and injected at runtime based on the `appsettings.json` -> `Algorithm` property value
   - The algorithm options are: `Recursive` (recursive, slower performance) and `Iterative` (iterative, better performance)
   - If a config value is not found, the fallback algorithm is the `Recursive` algorithm
 - The test framework is `MS Test`
