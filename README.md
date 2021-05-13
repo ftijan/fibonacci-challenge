@@ -15,14 +15,14 @@ Assumes a non-zero element order, so the first element is `1` and the app should
 # Architectural Overview
 
 - Runs on .Net 5.0
-- The console app uses the `IHostBuilder` to construct app through configuration and dependency injection
-- Uses 1 of 2 algorithms to calculate the sequence value:
+- The console app uses the `IHostBuilder` to construct the app dependencies through configuration and dependency injection
+- Uses one of two algorithms to calculate the fibonacci values:
   - The algorithm is chosen and injected at runtime based on the `appsettings.json` value of `Algorithm` property value
-  - Two possible algorithm alternatives: `Recursive` (recursive, slower performance) and `Iterative` (iterative, better performance)
-  - If config a value is not found, the fallback algorithm is the `Recursive` algorithm
-- Test framework is `MS Test`
+  - The algorithm options are: `Recursive` (recursive, slower performance) and `Iterative` (iterative, better performance)
+  - If a config value is not found, the fallback algorithm is the `Recursive` algorithm
+- The test framework is `MS Test`
   - `DataTestMethod` and `DataRow` data attributes are used to test a variety of use cases through a single test method as applicable
-  - The invalid inputs are also tested to make sure exceptions are thrown as expected
+  - The invalid inputs are also tested to make sure that exceptions are thrown as expected
 
 # Possible Enhancements
 - For what is does, the application is over-engineered:
@@ -36,4 +36,4 @@ Assumes a non-zero element order, so the first element is `1` and the app should
     - Reading input and input validation for the selected algorithm
     - Adding useful error messages when the user makes a selection or an input mistake
 - Architecturally, a possible improvement would be to separate the interfaces, their implementations and helper classes into separate folders and namespaces
-  - Since there are only 5 .cs files in the console app project, this was not done, but would be beneficial if the number of files was, for example, approaching double digits
+  - Since there are only 5 `.cs` files in the console app project, this was not done, but would be beneficial if the number of files was, for example, approaching double digits
