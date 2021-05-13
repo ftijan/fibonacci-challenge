@@ -15,18 +15,18 @@ Assumes a non-zero element order, so the first element is `1` and the app should
 # Architectural Overview
 
 - Runs on .Net 5.0
-- The console app uses the IHostBuilder to construct app through configuration and dependency injection
+- The console app uses the `IHostBuilder` to construct app through configuration and dependency injection
 - Uses 1 of 2 algorithms to calculate the sequence value:
   - The algorithm is chosen and injected at runtime based on the `appsettings.json` value of `Algorithm` property value
-  - Two possible algorithm alternatives: `Recursive` (recusive, slower performance) and `Iterative` (iterative, better performace)
+  - Two possible algorithm alternatives: `Recursive` (recusive, slower performance) and `Iterative` (iterative, better performance)
   - If config a value is not found, the fallback algorithm is the `Recursive` algorithm
 - Test framework is `MS Test`
   - `DataTestMethod` and `DataRow` data attributes are used to test a variety of use cases through a single test method as applicable
-  - The invalid inputs are also tested to make suer exceptions are thrown
+  - The invalid inputs are also tested to make sure exceptions are thrown as expected
 
 # Possible Enhancements
 - For what is does, the application is over-engineered:
-  - IHostBuilder pattern can be removed to simplify the logic and increase performance
+  - `IHostBuilder` pattern can be removed to simplify the logic and increase performance
   - Only a single calculation algorithm could also be used (preferrably the iterative one as it is more performant)
   - Alternatively, a second input parameter could be used to enable the user to pick which calculation algorithm should be used at runtime
     - If this is desirable, then the validation for that parameter should be implemented alongside a helper message to guide the user in selection
