@@ -18,7 +18,7 @@ Assumes a non-zero element order, so the first element is `1` and the app should
 - The console app uses the `IHostBuilder` to construct app through configuration and dependency injection
 - Uses 1 of 2 algorithms to calculate the sequence value:
   - The algorithm is chosen and injected at runtime based on the `appsettings.json` value of `Algorithm` property value
-  - Two possible algorithm alternatives: `Recursive` (recusive, slower performance) and `Iterative` (iterative, better performance)
+  - Two possible algorithm alternatives: `Recursive` (recursive, slower performance) and `Iterative` (iterative, better performance)
   - If config a value is not found, the fallback algorithm is the `Recursive` algorithm
 - Test framework is `MS Test`
   - `DataTestMethod` and `DataRow` data attributes are used to test a variety of use cases through a single test method as applicable
