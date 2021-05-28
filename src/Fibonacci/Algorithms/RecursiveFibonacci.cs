@@ -1,4 +1,4 @@
-﻿namespace Fibonacci
+﻿namespace Fibonacci.Algorithms
 {
     /// <summary>
     /// The recursive fibonacci algorithm calculator.

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Fibonacci.Algorithms;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace Fibonacci.Tests
