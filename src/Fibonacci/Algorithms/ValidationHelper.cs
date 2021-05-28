@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fibonacci
+namespace Fibonacci.Algorithms
 {
     /// <summary>
     /// Validation logic helper methods.

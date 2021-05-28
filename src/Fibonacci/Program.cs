@@ -1,18 +1,14 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Fibonacci.Algorithms;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Linq;
 
 namespace Fibonacci
 {
     class Program
     {
-        /// <summary>
-        /// The valid algorithms array, used in fibonacci calculator dependency injection.
-        /// </summary>
-        static readonly string[] ValidAlgorithms = new string[] { "Recursive", "Iterative" };
-
+        
         /// <summary>
         /// The application entrypoint.
         /// </summary>
@@ -47,16 +43,7 @@ namespace Fibonacci
             })
             .ConfigureServices((hostContext, services) =>
             {
-                var algorithm = hostContext.Configuration.GetValue<string>("Algorithm");
-
-                if (string.IsNullOrWhiteSpace(algorithm) || !ValidAlgorithms.Contains(algorithm) || algorithm == "Recursive")
-                {
-                    services.AddSingleton<IFibonacci, RecursiveFibonacci>();
-                }
-                else // Iterative algorithm
-                {
-                    services.AddSingleton<IFibonacci, IterativeFibonacci>();
-                }
+                services.AddSingleton(FibonacciFactory.Create(hostContext.Configuration));                
             });
 
         /// <summary>
