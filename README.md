@@ -35,5 +35,3 @@ Assumes a non-zero element order, so the first element is `1` and the app should
     - A menu system for the user to choose which algorithm to showcase
     - Reading input and input validation for the selected algorithm
     - Adding useful error messages when the user makes a selection or an input mistake
-- Architecturally, a possible improvement would be to separate the interfaces, their implementations and helper classes into separate folders and namespaces
-  - Since there are only 5 `.cs` files in the console app project, this was not done, but would be beneficial if the number of files was, for example, approaching double digits
